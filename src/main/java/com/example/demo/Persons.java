@@ -1,6 +1,7 @@
 package com.example.demo;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -28,6 +29,7 @@ public class Persons {
     public Persons() {
     }
 
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -36,6 +38,7 @@ public class Persons {
         this.name = name;
     }
 
+    @Column(name = "surname")
     public String getSurname() {
         return surname;
     }
@@ -44,6 +47,7 @@ public class Persons {
         this.surname = surname;
     }
 
+    @Column(name = "age")
     public int getAge() {
         return age;
     }
@@ -52,6 +56,7 @@ public class Persons {
         this.age = age;
     }
 
+    @Column(name = "phone_number")
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -60,6 +65,7 @@ public class Persons {
         this.phoneNumber = phoneNumber;
     }
 
+    @Column(name = "city_of_living")
     public String getCityOfLiving() {
         return cityOfLiving;
     }
