@@ -8,7 +8,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Repository
 @Transactional
@@ -24,9 +23,9 @@ public class PersonRepository {
 
     public List <Persons> getPersonsByCity(String city) {
         TypedQuery<Persons> query = entityManager.createQuery
-                ("select Persons from Persons p where p.cityOfLiving =:city",
+                ("select p from Persons p where p.cityOfLiving =:city",
                         Persons.class);
         query.setParameter("city", city);
-        return query.getResultList().stream().collect(Collectors.toList());
+        return query.getResultList();
     }
 }
